@@ -1,19 +1,32 @@
-.header{
-display: flex;
-justify-content: space-between;
-align-items: center;
-min-height: 60px;
-padding: 0 20px;
+.weather{
+position: relative
+}
+.weather_temp{
+position: absolute;
+top: 20px;
+left: 20px;
+}
+.weather_image{
+  width: 100%;
 }
 
-.header__logo{
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
 
-.header__avatar-logo{
+
+.card_section{
+  
+  margin-top: 20px
+}
+.card_name{
+  text-align: center;
+}
+.card_image{
+  width: 328px;
+  height: 328px;
+  border-radius: 10px;
+}
+.card_items{
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  align-items: center;
+  justify-content: center;
 }

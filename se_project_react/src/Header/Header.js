@@ -1,9 +1,11 @@
+import './Header.css'
+
 const Header = () => {
   return (
     <header className="header">
       <div className="header__logo">
         <div>
-          <img src="/images/wtwr-logo.svg" alt="logo" />
+          <img src={require('../images/wtwr-logo.svg').default} alt="logo" />
         </div>
         
       </div>
@@ -13,7 +15,7 @@ const Header = () => {
         </div>
         <div>Name</div>
         <div>
-          <img src="/images/wtwr-avatar.svg" alt="avatar" />
+          <img src={require('../images/wtwr-avatar.svg').default} alt="avatar" />
         </div>
       </div>
     </header>
