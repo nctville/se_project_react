@@ -1,10 +1,10 @@
-const ItemCard =({x})=> {
-    return <div>
+const ItemCard =({x, onSelectCard})=> {
+    return (<div>
       <div>
-        <img src={x.link} className="card_image" alt='clothing' />
+        <img src={x.link} className="card_image" onClick={()=> onSelectCard(x)} alt='clothing' />
       </div>
       <div className="card_name">{x.name}</div>
-    </div>;
+    </div>);
   }
 
 export default ItemCard
