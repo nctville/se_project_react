@@ -3,7 +3,7 @@ import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
 
 
-function Main({weatherTemp}) {
+function Main({weatherTemp, onSelectCard}) {
     return <main className="main">
       <WeatherCard day={true} type="day-cloudy" weatherTemp={weatherTemp} />
       <section className="card_section" id="card-section">
@@ -12,7 +12,7 @@ function Main({weatherTemp}) {
           {defaultClothingItems.map((x) => {
 
             return (
-              <ItemCard key={x._id} x={x} />
+              <ItemCard key={x._id} x={x} onSelectCard={onSelectCard} />
             );
           })}
         </div>
