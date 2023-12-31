@@ -9,7 +9,7 @@ import { getForecastWeather, parseWeatherData } from "./utils/weatherApi";
 
 
 function App() {
-  const weatherTemp = "65 F";
+  
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0)
@@ -31,11 +31,11 @@ function App() {
     getForecastWeather().then((data)=>{
       
       const temperature = parseWeatherData(data)
-      console.log(temperature);
+      
       setTemp(temperature)
     })
   }, [])
-  console.log(temp)
+ 
 
   return (
     <div>
