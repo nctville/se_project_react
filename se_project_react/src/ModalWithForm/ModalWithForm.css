@@ -8,6 +8,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(0,0,0,.5);
+    flex-direction: column;
 }
 
 .modal__content{
@@ -18,7 +19,12 @@
     padding: 34px 36px;
 }
 
-.modal__form{
-    display: flex;
-    flex-direction: column
+.modal__input{
+   
+  
+    border: none;
+    border-bottom: 1px solid #000;
+    background: transparent;
+    width: 100%;
+    margin-top: 8px;
 }
