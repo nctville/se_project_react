@@ -33,6 +33,7 @@ function App() {
 
   return (
     <div>
+      <div className="page__content">
       <Header onCreateModal={handleCreateModal} />
       <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
       <Footer />
@@ -102,6 +103,7 @@ function App() {
       {activeModal === "preview" && (
         <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
       )}
+      </div>
     </div>
   );
 }

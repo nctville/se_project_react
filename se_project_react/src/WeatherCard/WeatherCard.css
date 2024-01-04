@@ -1,14 +1,19 @@
-.weather{
-    position: relative
-    }
-    .weather_temp{
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    margin-bottom: 40px;
-    }
-    .weather_image{
-      width: 100%;
-    }
-    
-    
+.weather {
+  position: relative;
+}
+.weather_temp {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: white
+}
+.weather_image {
+  width: 100%;
+}
