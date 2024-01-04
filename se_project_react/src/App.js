@@ -39,7 +39,7 @@ function App() {
       {activeModal === "create" && (
         <ModalWithForm onClose={handleCloseModal} className="modal__container">
           <div className="modal__form-field">
-            <label>
+            <label className="modal__label">
               Name
               <input
                 className="modal__input modal__input_type_name"
@@ -52,7 +52,7 @@ function App() {
             </label>
           </div>
           <div className="modal__form-field">
-            <label>
+            <label className="modal__label">
               Image
               <input
                 className="modal__input modal__input_type_url"
