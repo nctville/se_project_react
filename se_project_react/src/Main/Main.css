@@ -1,3 +1,7 @@
+.main {
+  min-height: 100vh;
+}
+
 .card_info {
   font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-size: 20px;
@@ -15,4 +19,24 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+}
+
+.card_name {
+  position: absolute;
+  top: 18px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 2px 12px;
+
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0em;
+}
+
+.card_image {
+  width: 328px;
+  height: 328px;
+  border-radius: 10px;
 }
