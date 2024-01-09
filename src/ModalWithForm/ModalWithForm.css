@@ -58,3 +58,8 @@
   
   }
 
+  .modal__submit:hover{
+    cursor: pointer;
+    opacity: .6;
+}
+
