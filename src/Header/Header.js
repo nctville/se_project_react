@@ -4,7 +4,7 @@ const Header = ({ onCreateModal, city }) => {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
-  })
+  });
 
   return (
     <header className="header">
@@ -24,7 +24,7 @@ const Header = ({ onCreateModal, city }) => {
             +Add New Clothes
           </button>
         </div>
-        <div>NCT</div>
+        <div className="header__name">NCT</div>
         <div>
           <img
             src={require("../images/wtwr-avatar.svg").default}

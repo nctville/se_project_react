@@ -1,4 +1,4 @@
-import './ItemModal.css'
+import "./ItemModal.css";
 
 const ItemModal = ({ selectedCard, onClose }) => {
   return (
@@ -9,11 +9,11 @@ const ItemModal = ({ selectedCard, onClose }) => {
           className="modal__close"
           onClick={onClose}
         ></button>
-        <img src={selectedCard.link} alt="preview" className='modal__image' />
-        <div className='modal__caption'>
+        <img src={selectedCard.link} alt="preview" className="modal__image" />
+        <div className="modal__caption">
           <div>{selectedCard.name}</div>
           <div>Weather type: {selectedCard.weather}</div>
-          </div>
+        </div>
       </div>
     </div>
   );
