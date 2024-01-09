@@ -15,11 +15,11 @@ const ModalWithForm = ({
           type="button"
           onClick={onClose}
         ></button>
-        <h3 className="modal__heading">{title = 'Add garment'}</h3>
+        <h3 className="modal__heading">{title}</h3>
         <form className="modal__form">
           {children}
           <button className="modal__submit" type="submit">
-            {buttonText= 'Add garment'}
+            {buttonText}
           </button>
         </form>
       </div>
