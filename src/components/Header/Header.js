@@ -10,7 +10,7 @@ const Header = ({ onCreateModal, city }) => {
     <header className="header">
       <div className="header__logo">
         <div>
-          <img src={require("../images/wtwr-logo.svg").default} alt="logo" />
+          <img src={require('../../images/wtwr-logo.svg').default} alt="logo" />
         </div>
         <div className="header__location">{`${currentDate}, ${city}`}</div>
       </div>
@@ -27,7 +27,7 @@ const Header = ({ onCreateModal, city }) => {
         <div className="header__name">NCT</div>
         <div>
           <img
-            src={require("../images/wtwr-avatar.svg").default}
+            src={require("../../images/wtwr-avatar.svg").default}
             alt="avatar"
           />
         </div>
