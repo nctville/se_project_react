@@ -46,8 +46,12 @@ function App() {
       <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
       <Footer />
       {activeModal === "create" && (
-        <ModalWithForm onClose={handleCloseModal} className="modal__container"
-        title="New garment" buttonText="Add garment">
+        <ModalWithForm
+          onClose={handleCloseModal}
+          className="modal__container"
+          title="New garment"
+          buttonText="Add garment"
+        >
           <div className="modal__form-field">
             <label className="modal__label">
               Name
@@ -101,16 +105,15 @@ function App() {
               </label>
             </div>
             <div>
-            <label>
-              
-              <input
-                className="modal__button"
-                name="weatherType"
-                type="radio"
-                id="cold"
-                value="cold"
-              />
-              Cold
+              <label>
+                <input
+                  className="modal__button"
+                  name="weatherType"
+                  type="radio"
+                  id="cold"
+                  value="cold"
+                />
+                Cold
               </label>
             </div>
           </div>
