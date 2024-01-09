@@ -1,4 +1,4 @@
-import "./App.css"
+import "./App.css";
 
 import Header from "../Header/Header";
 // import WeatherCard from "./WeatherCard/WeatherCard";
@@ -28,18 +28,20 @@ function App() {
   };
 
   useEffect(() => {
-    getForecastWeather().then((data) => {
-      const currentCity = data.name;
+    getForecastWeather()
+      .then((data) => {
+        const currentCity = data.name;
         setCity(currentCity);
-      const temperature = parseWeatherData(data);
-
-      setTemp(temperature);
-    });
+        const temperature = parseWeatherData(data);
+        setTemp(temperature);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }, []);
 
   return (
-    <div>
-      <div className="page__content">
+    <div className="page__content">
       <Header onCreateModal={handleCreateModal} city={city} />
       <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
       <Footer />
@@ -74,26 +76,32 @@ function App() {
           <p className="modal__select-title">Select the weather type:</p>
           <div className="modal__select-buttons">
             <div>
-              <input
-                className="modal__button"
-                name="weatherType"
-                type="radio"
-                id="hot"
-                value="hot"
-              />
-              <label>Hot</label>
+              <label>
+                <input
+                  className="modal__button"
+                  name="weatherType"
+                  type="radio"
+                  id="hot"
+                  value="hot"
+                />
+                Hot
+              </label>
             </div>
             <div>
-              <input
-                className="modal__button"
-                name="weatherType"
-                type="radio"
-                id="warm"
-                value="warm"
-              />
-              <label>Warm</label>
+              <label>
+                <input
+                  className="modal__button"
+                  name="weatherType"
+                  type="radio"
+                  id="warm"
+                  value="warm"
+                />
+                Warm
+              </label>
             </div>
             <div>
+            <label>
+              
               <input
                 className="modal__button"
                 name="weatherType"
@@ -101,7 +109,8 @@ function App() {
                 id="cold"
                 value="cold"
               />
-              <label>Cold</label>
+              Cold
+              </label>
             </div>
           </div>
         </ModalWithForm>
@@ -109,7 +118,6 @@ function App() {
       {activeModal === "preview" && (
         <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
       )}
-      </div>
     </div>
   );
 }
