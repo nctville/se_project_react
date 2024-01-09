@@ -8,6 +8,7 @@ const ItemModal = ({ selectedCard, onClose }) => {
           type="button"
           className="modal__close"
           onClick={onClose}
+
         ></button>
         <img
           src={selectedCard.link}
