@@ -1,19 +1,5 @@
 import './WeatherCard.css'
-const weatherOptions = [
-  { url: require('../../images/day-storm.svg').default, day: true, type: "day-sunny" },
-  { url: require('../../images/day-cloudy.svg').default, day: true, type: "day-cloudy" },
-  { url: require('../../images/day-fog.svg').default, day: true, type: "day-fog" },
-  { url: require('../../images/day-rainy.svg').default, day: true, type: "day-rainy" },
-  { url: require('../../images/day-storm.svg').default, day: true, type: "day-storm" },
-  { url: require('../../images/day-snow.svg').default, day: true, type: "day-snow" },
-
-  { url: require('../../images/night-cloudy.svg').default, day: false, type: "night-cloudy" },
-  { url: require('../../images/night-fog.svg').default, day: false, type: "night-fog" },
-  { url: require('../../images/night-moon.svg').default, day: false, type: "night-moon" },
-  { url: require('../../images/night-rainy.svg').default, day: false, type: "night-rainy" },
-  { url: require('../../images/night-storm.svg').default, day: false, type: "night-storm" },
-  { url: require('../../images/night-snow.svg').default, day: false, type: "night-snow" },
-];
+import { weatherOptions } from '../../utils/constants';
 
 const WeatherCard = ({ day, type, weatherTemp }) => {
   const imgSrc = weatherOptions.filter((i) => {
