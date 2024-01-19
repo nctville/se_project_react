@@ -30,7 +30,8 @@ function App() {
     setSelectedCard(card);
   };
   const handleToggleSwitchChange = ()=>{
-
+    if (currentTempUnit === "C") setCurrentTempUnit("F");
+    if (currentTempUnit === "F") setCurrentTempUnit("C");
   }
 
   useEffect(() => {
@@ -45,7 +46,7 @@ function App() {
         console.error(err);
       });
   }, []);
-
+console.log(currentTempUnit);
   return (
     <div className="page__content">
        <CurrentTempUnitContext.Provider
