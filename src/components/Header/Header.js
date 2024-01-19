@@ -1,4 +1,5 @@
 import "./Header.css";
+import ToggleSwitch from '../ToggleSwitch/ToggleSwitch'
 import logo from '../../images/wtwr-logo.svg'
 import avatar from '../../images/wtwr-avatar.svg'
 
@@ -17,6 +18,7 @@ const Header = ({ onCreateModal, city }) => {
         <div className="header__location">{`${currentDate}, ${city}`}</div>
       </div>
       <div className="header__avatar-logo">
+        <ToggleSwitch/>
         <div>
           <button
             type="text"
