@@ -5,7 +5,7 @@ import Header from "../Header/Header";
 // import ItemCard from "./ItemCard/ItemCard";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import AddItemModal from "../AddItemModal/AddItemModal";
 import { useEffect, useState } from "react";
 import ItemModal from "../ItemModal/ItemModal";
 import { getForecastWeather, parseWeatherData } from "../../utils/weatherApi";
@@ -24,6 +24,11 @@ function App() {
   };
   const handleCloseModal = () => {
     setActiveModal("");
+  };
+
+  const onAddItem = (e) => {
+    e.preventDefault();
+
   };
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
@@ -55,87 +60,18 @@ function App() {
         <Header onCreateModal={handleCreateModal} city={city} />
 
         <Switch>
-          <Route exact path  ='/'>
+          <Route exact path="/">
             <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
           </Route>
-          <Route  path  ='/profile'>
-            PROFILE
-          </Route>
+          <Route path="/profile">PROFILE</Route>
         </Switch>
         <Footer />
         {activeModal === "create" && (
-          <ModalWithForm
-            onClose={handleCloseModal}
-            className="modal__container"
-            title="New garment"
-            buttonText="Add garment"
-          >
-            <div className="modal__form-field">
-              <label className="modal__label">
-                Name
-                <input
-                  className="modal__input modal__input_type_name"
-                  type="text"
-                  name="name"
-                  minLength="1"
-                  maxLength="40"
-                  placeholder="Name"
-                />
-              </label>
-            </div>
-            <div className="modal__form-field">
-              <label className="modal__label">
-                Image
-                <input
-                  className="modal__input modal__input_type_url"
-                  type="url"
-                  name="link"
-                  minLength="1"
-                  maxLength="40"
-                  placeholder="Image URL"
-                />
-              </label>
-            </div>
-            <p className="modal__select-title">Select the weather type:</p>
-            <div className="modal__select-buttons">
-              <div>
-                <label>
-                  <input
-                    className="modal__button"
-                    name="weatherType"
-                    type="radio"
-                    id="hot"
-                    value="hot"
-                  />
-                  Hot
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input
-                    className="modal__button"
-                    name="weatherType"
-                    type="radio"
-                    id="warm"
-                    value="warm"
-                  />
-                  Warm
-                </label>
-              </div>
-              <div>
-                <label>
-                  <input
-                    className="modal__button"
-                    name="weatherType"
-                    type="radio"
-                    id="cold"
-                    value="cold"
-                  />
-                  Cold
-                </label>
-              </div>
-            </div>
-          </ModalWithForm>
+          <AddItemModal
+            handleCloseModal={handleCloseModal}
+            isOpen={activeModal === "create"}
+            onAddItem={onAddItem}
+          />
         )}
         {activeModal === "preview" && (
           <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
