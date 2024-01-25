@@ -1,5 +1,5 @@
 import "./App.css";
-
+import Profile from "../Profile/Profile";
 import Header from "../Header/Header";
 // import WeatherCard from "./WeatherCard/WeatherCard";
 // import ItemCard from "./ItemCard/ItemCard";
@@ -18,6 +18,7 @@ function App() {
   const [temp, setTemp] = useState(0);
   const [city, setCity] = useState("");
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
+  const [clothingItems, setClothingItems] = useState([]);
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -26,9 +27,16 @@ function App() {
     setActiveModal("");
   };
 
-  const onAddItem = (e) => {
-    e.preventDefault();
-
+  const onAddItem = (values, e) => {
+    e.preventDefault()
+    onAddItem(values)
+      .then((item) => {
+        const newItemList = Array.filter(clothingItems);
+        newItemList.push(item);
+        setClothingItems(newItemList);
+        handleCloseModal();
+      })
+      .catch((err) => console.log(err));
   };
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
@@ -63,7 +71,7 @@ function App() {
           <Route exact path="/">
             <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
           </Route>
-          <Route path="/profile">PROFILE</Route>
+          <Route path="/profile"><Profile /></Route>
         </Switch>
         <Footer />
         {activeModal === "create" && (

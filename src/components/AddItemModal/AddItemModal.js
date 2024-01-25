@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const AddItemModal = (handleCloseModal, onAddItem, isOpen) => {
+const AddItemModal = ({handleCloseModal, onAddItem, isOpen}) => {
   const [name, setName] = useState("");
   const handleNameChange = (e) => {
     console.log(e.target.value);
@@ -97,7 +97,7 @@ const AddItemModal = (handleCloseModal, onAddItem, isOpen) => {
             <input
               className="modal__button"
               value={temp}
-              
+
               onChange={handleTempChange}
               name="weatherType"
               type="radio"
