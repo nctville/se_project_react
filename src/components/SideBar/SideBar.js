@@ -1,10 +1,21 @@
 import avatar from "../../images/wtwr-avatar.svg";
+import './SideBar.css'
 
-const SideBar = ()=>{
-<div className="sidebar__profile">
-    <img className="sidebar__avatar" src={avatar} alt="avatar" />
-    <div className="sidebar__profile-name" type='text'>NCT</div>
-</div>
-}
+const SideBar = () => {
+    return (
+      <div className="sidebar">
+        <div className="sidebar__info">
+          <img
+            src={avatar}
+            className="sidebar__image"
+            alt="sidebar-avatar"
+          />
+          <div>
+            <p className="sidebar__name">NCT</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
 
 export default SideBar

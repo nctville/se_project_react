@@ -1,0 +1,7 @@
+.sidebar__info {
+  display: flex;
+  align-content: space-around;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}

@@ -1,4 +1,5 @@
 import "./App.css";
+import api from "../../utils/api";
 import Profile from "../Profile/Profile";
 import Header from "../Header/Header";
 // import WeatherCard from "./WeatherCard/WeatherCard";
@@ -14,7 +15,7 @@ import { Route, Switch } from "react-router-dom/cjs/react-router-dom.min";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
-  const [selectedCard, setSelectedCard] = useState({});
+  const [selectedCard, setSelectedCard] = useState(null);
   const [temp, setTemp] = useState(0);
   const [city, setCity] = useState("");
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
@@ -27,16 +28,9 @@ function App() {
     setActiveModal("");
   };
 
-  const onAddItem = (values, e) => {
+  const onAddItem = (e) => {
     e.preventDefault()
-    onAddItem(values)
-      .then((item) => {
-        const newItemList = Array.filter(clothingItems);
-        newItemList.push(item);
-        setClothingItems(newItemList);
-        handleCloseModal();
-      })
-      .catch((err) => console.log(err));
+   
   };
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
@@ -46,6 +40,14 @@ function App() {
     if (currentTempUnit === "C") setCurrentTempUnit("F");
     if (currentTempUnit === "F") setCurrentTempUnit("C");
   };
+
+  const handleAddItemSubmit = (item)=>{
+    api.addItem(item).then((newItem)=>{
+      setClothingItems([newItem, ...clothingItems])
+      handleCloseModal()
+    })
+    .catch((err)=>console.log(err))
+  }
 
   useEffect(() => {
     getForecastWeather()
@@ -60,6 +62,15 @@ function App() {
       });
   }, []);
 
+  useEffect(() => {
+    api.getItemList()
+      .then((items) => {
+        setClothingItems(items)
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
   return (
     <div className="page__content">
       <CurrentTempUnitContext.Provider
