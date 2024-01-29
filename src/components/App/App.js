@@ -29,8 +29,7 @@ function App() {
   };
 
   const onAddItem = (e) => {
-    e.preventDefault()
-   
+    e.preventDefault();
   };
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
@@ -41,13 +40,15 @@ function App() {
     if (currentTempUnit === "F") setCurrentTempUnit("C");
   };
 
-  const handleAddItemSubmit = (item)=>{
-    api.addItem(item).then((newItem)=>{
-      setClothingItems([newItem, ...clothingItems])
-      handleCloseModal()
-    })
-    .catch((err)=>console.log(err))
-  }
+  const handleAddItemSubmit = (item) => {
+    api
+      .addItem(item)
+      .then((newItem) => {
+        setClothingItems([newItem, ...clothingItems]);
+        handleCloseModal();
+      })
+      .catch((err) => console.log(err));
+  };
 
   useEffect(() => {
     getForecastWeather()
@@ -63,9 +64,11 @@ function App() {
   }, []);
 
   useEffect(() => {
-    api.getItemList()
+    api
+      .getItemList()
       .then((items) => {
-        setClothingItems(items)
+        console.log(items)
+        setClothingItems(items);
       })
       .catch((err) => {
         console.error(err);
@@ -82,7 +85,9 @@ function App() {
           <Route exact path="/">
             <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
           </Route>
-          <Route path="/profile"><Profile /></Route>
+          <Route path="/profile">
+            <Profile onSelectCard={handleSelectedCard} clothingItems={clothingItems} />
+          </Route>
         </Switch>
         <Footer />
         {activeModal === "create" && (

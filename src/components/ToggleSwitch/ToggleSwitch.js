@@ -11,7 +11,6 @@ const ToggleSwitch = () => {
   //   if (currentTempUnit === "F") handleToggleSwitchChange("C");
   // };
 const {currentTempUnit, handleToggleSwitchChange} = useContext(CurrentTempUnitContext)
-console.log(currentTempUnit)
   return (
     <label className="switch">
       <input type="checkbox" className="switch__box" onChange={handleToggleSwitchChange} />
