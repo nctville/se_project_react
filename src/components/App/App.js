@@ -28,9 +28,11 @@ function App() {
     setActiveModal("");
   };
 
-  const onAddItem = (e) => {
-    e.preventDefault();
-  };
+  // const onAddItem = (e) => {
+  //   e.preventDefault();
+  // };
+
+
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
@@ -93,8 +95,8 @@ function App() {
           <AddItemModal
             handleCloseModal={handleCloseModal}
             isOpen={activeModal === "create"}
-            onAddItem={onAddItem}
-            onCreateModal={handleCreateModal}
+            // onAddItem={onAddItem}
+            handleCreateModal={handleCreateModal}
             handleAddItemSubmit={handleAddItemSubmit}
           />
         )}
