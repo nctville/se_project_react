@@ -1,12 +1,12 @@
 import ItemCard from "../ItemCard/ItemCard";
 
 
-const ClothesSection = ({clothingItems, onCreateModal, onSelectCard }) => {
+const ClothesSection = ({clothingItems, handleCreateModal, onSelectCard }) => {
     return (
       <div className="clothes__section">
         <div className="clothes__section-add" type="text">
           <p className="clothes__section-title">Your items</p>
-          <button className="clothes__section-button" onClick={onCreateModal} type="text" >
+          <button className="clothes__section-button" onClick={handleCreateModal} type="text" >
             
             + Add New
           </button>

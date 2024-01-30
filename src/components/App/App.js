@@ -85,7 +85,7 @@ function App() {
             <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
           </Route>
           <Route path="/profile">
-            <Profile onSelectCard={handleSelectedCard} clothingItems={clothingItems} />
+            <Profile onSelectCard={handleSelectedCard} clothingItems={clothingItems} handleCreateModal={handleCreateModal} />
           </Route>
         </Switch>
         <Footer />
