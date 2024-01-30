@@ -4,19 +4,16 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 const AddItemModal = ({handleCloseModal, onAddItem, isOpen}) => {
   const [name, setName] = useState("");
   const handleNameChange = (e) => {
-    console.log(e.target.value);
     setName(e.target.value);
   };
 
   const [url, setUrl] = useState("");
   const handleUrlChange = (e) => {
-    console.log(e.target.value);
     setUrl(e.target.value);
   };
 
   const [temp, setTemp] = useState("");
   const handleTempChange = (e) => {
-    console.log(e.target.value);
     setTemp(e.target.value);
   };
 

@@ -67,7 +67,6 @@ function App() {
     api
       .getItemList()
       .then((items) => {
-        console.log(items)
         setClothingItems(items);
       })
       .catch((err) => {
@@ -95,6 +94,8 @@ function App() {
             handleCloseModal={handleCloseModal}
             isOpen={activeModal === "create"}
             onAddItem={onAddItem}
+            onCreateModal={handleCreateModal}
+            handleAddItemSubmit={handleAddItemSubmit}
           />
         )}
         {activeModal === "preview" && (
