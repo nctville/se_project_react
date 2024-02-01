@@ -32,7 +32,6 @@ function App() {
   //   e.preventDefault();
   // };
 
-
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
@@ -84,10 +83,18 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
+            <Main
+              weatherTemp={temp}
+              onSelectCard={handleSelectedCard}
+              clothingItems={clothingItems}
+            />
           </Route>
           <Route path="/profile">
-            <Profile onSelectCard={handleSelectedCard} clothingItems={clothingItems} handleCreateModal={handleCreateModal} />
+            <Profile
+              onSelectCard={handleSelectedCard}
+              clothingItems={clothingItems}
+              handleCreateModal={handleCreateModal}
+            />
           </Route>
         </Switch>
         <Footer />
