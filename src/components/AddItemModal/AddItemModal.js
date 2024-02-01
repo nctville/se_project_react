@@ -7,19 +7,19 @@ const AddItemModal = ({handleCloseModal, handleAddItemSubmit, isOpen}) => {
     setName(e.target.value);
   };
 
-  const [url, setUrl] = useState("");
+  const [imageUrl, setUrl] = useState("");
   const handleUrlChange = (e) => {
     setUrl(e.target.value);
   };
 
-  const [temp, setTemp] = useState("");
+  const [weather, setTemp] = useState("");
   const handleTempChange = (e) => {
     setTemp(e.target.value);
   };
 
   function handleSubmit(e) {
     e.preventDefault();
-    handleAddItemSubmit({ name, url, temp });
+    handleAddItemSubmit({ name, imageUrl, weather });
   }
 
   return (
@@ -50,7 +50,7 @@ const AddItemModal = ({handleCloseModal, handleAddItemSubmit, isOpen}) => {
           Image
           <input
             className="modal__input modal__input_type_url"
-            value={url}
+            value={imageUrl}
             onChange={handleUrlChange}
             type="url"
             name="link"
@@ -65,7 +65,7 @@ const AddItemModal = ({handleCloseModal, handleAddItemSubmit, isOpen}) => {
           <label>
             <input
               className="modal__button"
-              value={temp}
+              value={weather}
               onChange={handleTempChange}
               name="weatherType"
               type="radio"
@@ -78,7 +78,7 @@ const AddItemModal = ({handleCloseModal, handleAddItemSubmit, isOpen}) => {
           <label>
             <input
               className="modal__button"
-              value={temp}
+              value={weather}
               onChange={handleTempChange}
               name="weatherType"
               type="radio"
@@ -91,7 +91,7 @@ const AddItemModal = ({handleCloseModal, handleAddItemSubmit, isOpen}) => {
           <label>
             <input
               className="modal__button"
-              value={temp}
+              value={weather}
 
               onChange={handleTempChange}
               name="weatherType"

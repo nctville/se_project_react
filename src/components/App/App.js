@@ -41,9 +41,9 @@ function App() {
     if (currentTempUnit === "F") setCurrentTempUnit("C");
   };
 
-  const handleAddItemSubmit = (item) => {
+  const handleAddItemSubmit = ({name, weather, imageUrl}) => {
     api
-      .addItem(item)
+      .addItem({name, weather, imageUrl})
       .then((newItem) => {
         setClothingItems([newItem, ...clothingItems]);
         handleCloseModal();
