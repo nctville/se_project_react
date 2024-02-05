@@ -41,14 +41,28 @@ function App() {
     if (currentTempUnit === "F") setCurrentTempUnit("C");
   };
 
-  const handleAddItemSubmit = ({name, weather, imageUrl}) => {
+  const handleAddItemSubmit = ({ name, weather, imageUrl }) => {
     api
-      .addItem({name, weather, imageUrl})
+      .addItem({ name, weather, imageUrl })
       .then((newItem) => {
         setClothingItems([newItem, ...clothingItems]);
         handleCloseModal();
       })
       .catch((err) => console.log(err));
+  };
+
+  const handleCardDelete = (selectedCard) => {
+    api.deleteItem(selectedCard)
+      .then(() => {
+        const newClothesList = clothingItems.filter((cards) => {
+          return cards._id !== selectedCard._id;
+        });
+        setClothingItems(newClothesList);
+        handleCloseModal();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   useEffect(() => {
@@ -74,6 +88,7 @@ function App() {
         console.error(err);
       });
   }, []);
+
   return (
     <div className="page__content">
       <CurrentTempUnitContext.Provider
@@ -108,7 +123,11 @@ function App() {
           />
         )}
         {activeModal === "preview" && (
-          <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
+          <ItemModal
+            selectedCard={selectedCard}
+            onClose={handleCloseModal}
+            onCardDelete={handleCardDelete}
+          />
         )}
       </CurrentTempUnitContext.Provider>
     </div>
