@@ -29,9 +29,8 @@ const addItem = ({ name, weather, imageUrl }) => {
     }).then(handleServerResponse);
   };
 
-  const deleteItem = () => {
-
-    return fetch(`${BASE_URL}/items`, {
+  const deleteItem = ({ _id }) => {
+    return fetch(`${BASE_URL}/items/${_id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
