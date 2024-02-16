@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+What to wear application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Description
+This is the first stage of an app that will use weather information based on the users location and provide clothing recommendations.
 
-## Available Scripts
+Additional, functionality will include the ability to upload images and garment descriptions based on weather types.
 
-In the project directory, you can run:
+Initially, latitide and longitude are fixed, as well as the current options for garments.
 
-### `npm start`
+Technology used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Create React App
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Figma
 
-### `npm test`
+Link to project Figma
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Application preview
 
-### `npm run build`
+React
+The markup has been ported to JSX and:
+Is included within ( ). Has been moved to the corresponding components.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Components:
+Hooks are not used inside conditional statements. Hooks are called in a component's main function. Class components - the effects are described inside the component lifecycle methods.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+All state variables from the brief have been created and defined within the components specified in the brief.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The initial state of state variables contains the correct data type.
 
-### `npm run eject`
+All of the features listed in the brief have been implemented and are functioning properly:
+Across all components:
+Contain all the items listed in the brief Accepted required props mentioned in the brief
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The CurrentTemperatureUnitContext context should meet the following requirements:
+Exported from a separate file in the contexts directory. Imported in Main, ToggleSwitch, and WeatherCard components. Embedded in the App component via CurrentTemperatureUnitContext.Provider. Has currentTemperatureUnit and handleToggleSwitchChange values for the provider.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The App component
+Includes Header, Main, Footer, ModalWithForm, and ItemModal components. Makes an API request for the weather data (only once — on mounting). Saves default clothing items in the state. Makes API requests for the mock server. Saves the current temperature unit and handles the toggle switch change. Saves the added clothing item.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The Header component
+Calculates the current date. Includes ToggleSwitch (which renders a checkbox with the state saved in the context). Includes a button for opening AddItemModal (which renders a modal for adding a clothing item and uses the ModalWithForm). Includes navigation links to the main and profile pages.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The Main component includes WeatherCard (which displays temperature in Fahrenheit), and an array of ItemCard (which renders an image and title of a clothing item) components.
 
-## Learn More
+The Profile component includes SideBar (which displays user name) and ClothesSection (which displays all the clothing items) components.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The ModalWithForm component renders a modal with a form.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The ItemModal component renders the modal with item image, title, and delete button.
 
-### Code Splitting
+The utils files contain
+Coordinates object with latitude and longitude fields The API key for the Weather API Weather API fetch and filter methods Logic for defining temperature Mock API fetch methods
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Routing
+The components and are used correctly. Clicking the logo leads to the main page (/) Clicking the profile info leads to the profile page (/profile)
 
-### Analyzing the Bundle Size
+API interaction
+The api.js and weatherApi.js files, in which requests to the server were described, and created.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Each method which enables making requests to the server contains return fetch, e.g. returns a Promise object.
 
-### Making a Progressive Web App
+Server responses always checks for correctness.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Each promise contains code for processing errors after making a request to the server.
 
-### Advanced Configuration
+Weather API:
+There is one GET request for fetching the forecasted weather.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Mock API:
+There is the db.json file with a database with some cards placed in the root folder of the project. There are three API calls: GET /items, POST /items, and DELETE /items/:id.

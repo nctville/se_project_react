@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const AddItemModal = ({handleCloseModal, handleAddItemSubmit, isOpen}) => {
@@ -19,8 +19,18 @@ const AddItemModal = ({handleCloseModal, handleAddItemSubmit, isOpen}) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    handleAddItemSubmit({ name, imageUrl, weather });
+    handleAddItemSubmit({ name, imageUrl, weather});
+
   }
+
+  useEffect(() => {
+    if (isOpen) {
+      setName("");
+      setUrl("");
+      setTemp("");
+     
+    }
+  }, [isOpen]);
 
   return (
     <ModalWithForm

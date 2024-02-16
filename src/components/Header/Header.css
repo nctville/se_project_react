@@ -16,6 +16,12 @@
   text-align: left;
 }
 
+.header__button:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+
 .header__logo {
   display: flex;
   gap: 20px;

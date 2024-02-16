@@ -2,10 +2,10 @@
   border-radius: 20px;
 }
 
-.weather__info {
+/* .weather__info {
   background-color: white;
   border-bottom: 20px;
-}
+} */
 
 .modal__close {
   border: none;
@@ -18,6 +18,11 @@
   right: 20px;
   top: 20px;
   background-color: black;
+}
+
+.modal__close:hover{
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .modal__content-preview {

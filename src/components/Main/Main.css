@@ -40,3 +40,7 @@
   height: 328px;
   border-radius: 10px;
 }
+
+.card_image:hover{
+  cursor: pointer;
+}
