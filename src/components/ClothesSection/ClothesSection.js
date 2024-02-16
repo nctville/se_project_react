@@ -4,15 +4,15 @@ import "./ClothesSection.css";
 
 const ClothesSection = ({clothingItems, handleCreateModal, onSelectCard }) => {
     return (
-      <div className="clothes__section">
-        <div className="clothes__section-add" type="text">
-          <p className="clothes__section-title">Your items</p>
-          <button className="clothes__section-button" onClick={handleCreateModal} type="text" >
+      <div className="profile__clothes-section">
+        <div className="profile__clothes-section-add" type="text">
+          <p className="profile__clothes-section-title">Your items</p>
+          <button className="profile__clothes-section-button" onClick={handleCreateModal} type="text" >
             
             + Add New
           </button>
         </div>
-        <div className="clothes__section-items">
+        <div className="profile__clothes-section-items">
         {clothingItems.map((item) => {
           return (
             <ItemCard

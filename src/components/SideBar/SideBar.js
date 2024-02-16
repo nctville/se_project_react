@@ -3,11 +3,11 @@ import "./SideBar.css";
 
 const SideBar = () => {
   return (
-    <div className="sidebar">
-      <div className="sidebar__info">
-        <img src={avatar} className="sidebar__image" alt="sidebar-avatar" />
+    <div className="profile__sidebar">
+      <div className="profile__sidebar-info">
+        <img src={avatar} className="profile__sidebar-image" alt="sidebar-avatar" />
         <div>
-          <p className="sidebar__name">NCT</p>
+          <p className="profile__sidebar-name">NCT</p>
         </div>
       </div>
     </div>
