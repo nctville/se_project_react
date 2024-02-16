@@ -83,6 +83,17 @@
       "weather": "",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Beanie.png?etag=bc10497cc80fa557f036e94f9999f7b2",
       "_id": 17
+    },
+    {
+      "name": "das",
+      "imageUrl": "https://unsplash.com/photos/a-woman-in-a",
+      "_id": 18
+    },
+    {
+      "name": "dasdddd",
+      "weather": "",
+      "imageUrl": "https://unsplash.com/photos/a-woman-in-a",
+      "_id": 19
     }
   ]
 }

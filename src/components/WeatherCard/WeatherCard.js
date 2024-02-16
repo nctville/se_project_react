@@ -9,7 +9,7 @@ const WeatherCard = ({ day, type, weatherTemp }) => {
     return item.day === day && item.type === type;
   });
 
-  const imgSrcUrl = imgSrc[0].url || ""
+  const imgSrcUrl = weatherOptions[0].url || ""
   return (
     <section className="weather" id="weather">
       <div className="weather_temp">{weatherTemp}°{currentTemperatureUnit}</div>
