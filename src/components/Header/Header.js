@@ -14,7 +14,7 @@ const Header = ({ onCreateModal, city }) => {
     <header className="header">
       <div className="header__logo">
         <div>
-          <Link to="">
+          <Link to="/">
             <img src={logo} alt="logo" />
           </Link>
         </div>
@@ -32,7 +32,7 @@ const Header = ({ onCreateModal, city }) => {
           </button>
         </div>
 
-        <Link to="profile" className="header__name">
+        <Link to="/profile" className="header__name">
           NCT
         </Link>
         <div>
