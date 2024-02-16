@@ -18,7 +18,7 @@ function App() {
   const [selectedCard, setSelectedCard] = useState(null);
   const [temp, setTemp] = useState(0);
   const [city, setCity] = useState("");
-  const [currentTempUnit, setCurrentTempUnit] = useState("F");
+  const [currentTemperatureUnit, setcurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
 
   const handleCreateModal = () => {
@@ -37,8 +37,8 @@ function App() {
     setSelectedCard(card);
   };
   const handleToggleSwitchChange = () => {
-    if (currentTempUnit === "C") setCurrentTempUnit("F");
-    if (currentTempUnit === "F") setCurrentTempUnit("C");
+    if (currentTemperatureUnit === "C") setcurrentTemperatureUnit("F");
+    if (currentTemperatureUnit === "F") setcurrentTemperatureUnit("C");
   };
 
   const handleAddItemSubmit = ({ name, weather, imageUrl }) => {
@@ -92,7 +92,7 @@ function App() {
   return (
     <div className="page__content">
       <CurrentTemperatureUnitContext.Provider
-        value={{ currentTempUnit, handleToggleSwitchChange }}
+        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
       >
         <Header onCreateModal={handleCreateModal} city={city} />
 
