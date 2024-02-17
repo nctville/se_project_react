@@ -41,9 +41,9 @@ function App() {
     if (currentTemperatureUnit === "F") setcurrentTemperatureUnit("C");
   };
 
-  const handleAddItemSubmit = ({ name, imageUrl }) => {
+  const handleAddItemSubmit = ({ name, weather, imageUrl }) => {
     api
-      .addItem({ name, imageUrl })
+      .addItem({ name, weather, imageUrl })
       .then((newItem) => {
         setClothingItems([newItem, ...clothingItems]);
         handleCloseModal();
