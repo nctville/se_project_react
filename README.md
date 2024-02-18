@@ -69,3 +69,6 @@ There is one GET request for fetching the forecasted weather.
 
 Mock API:
 There is the db.json file with a database with some cards placed in the root folder of the project. There are three API calls: GET /items, POST /items, and DELETE /items/:id.
+
+Heres a link to my github repo:
+https://github.com/nctville/se_project_react
